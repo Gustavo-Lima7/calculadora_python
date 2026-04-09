@@ -1,0 +1,48 @@
+import math
+from time import sleep
+
+#importa a bibliotéca math para usar funções matemáticas avançadas, embora neste código específico não seja utilizada.
+
+while True:
+    print("===" * 10)
+    print("SEJA BEM VINDO(A) A CALCULADORA!")
+    print("===" * 10)
+
+#faz o design da calculadora, imprimindo uma mensagem de boas-vindas e separando-a com linhas.
+ 
+    print("Escolha a operação que deseja utilizar:\n")
+    print("1.Soma(+)\n")
+    print("2.Subtração(-)\n")
+    print("3.Multiplicação(*)\n")
+    print("4.Divisão(/)\n")
+    print("5.Potência(**)\n")
+    print("6.Sair\n")
+
+    oper = input("Digite a operação que você deseja utilizar: ")
+    if oper == "6":
+        print("Reiniciando...\n")
+        sleep(2)
+        continue #verifica se a operação escolhida é "6" (Sair). Se for, imprime uma mensagem de reinício, aguarda 2 segundos e reinicia o loop, voltando ao início do programa.
+        
+
+#solicita ao usuário que escolha uma operação e, se a opção for "6", imprime uma mensagem de despedida e encerra o programa. Caso contrário, continua solicitando os números para realizar a operação escolhida.
+
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    
+    print("Calculando...")
+    sleep(2) #adiciona uma pausa de 1 segundo para simular o processo de cálculo, tornando a experiência do usuário mais realista.
+
+#verifica qual operação o usuário escolheu e realiza o cálculo correspondente, imprimindo o resultado. O loop continua até que o usuário escolha a opção de sair (6).
+
+    if oper == "1":
+        resul = num1 + num2
+        print(f"O resultado da soma é: {resul}\n")
+    elif oper == "2":
+        print(f"O resultado da subtração é: {num1 - num2}\n")
+    elif oper == "3":
+        print(f"O resultado da multiplicação é: {num1 * num2}\n")
+    if oper == "4":
+        print(f"O resultado da divisão é: {num1 / num2}\n")
+    elif oper == "5":
+        print(f"O resultado da potência é: {num1 ** num2}\n")
