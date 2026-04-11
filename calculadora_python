@@ -4,9 +4,9 @@ from time import sleep
 #importa a bibliotéca math para usar funções matemáticas avançadas, embora neste código específico não seja utilizada.
 
 while True:
-    print("===" * 10)
+    print("===" * 11)
     print("SEJA BEM VINDO(A) A CALCULADORA!")
-    print("===" * 10)
+    print("===" * 11)
 
 #faz o design da calculadora, imprimindo uma mensagem de boas-vindas e separando-a com linhas.
  
@@ -15,8 +15,8 @@ while True:
     print("2.Subtração(-)\n")
     print("3.Multiplicação(*)\n")
     print("4.Divisão(/)\n")
-    print("5.Potência(**)\n")
-    print("6.Sair\n")
+    print("5.Potência(^)\n")
+    print("6.Sair(X)\n")
 
     oper = input("Digite a operação que você deseja utilizar: ")
     if oper == "6":
