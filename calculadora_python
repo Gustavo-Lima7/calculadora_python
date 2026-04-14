@@ -1,48 +1,56 @@
 import math
-from time import sleep
-
-#importa a bibliotéca math para usar funções matemáticas avançadas, embora neste código específico não seja utilizada.
+from colorama import Fore, Style #Biblioteca de cores para o terminal para colorir/personalizar o terminal.
+from time import sleep #Biblioteca para colocar pausa em algumas strings.
 
 while True:
-    print("===" * 11)
-    print("SEJA BEM VINDO(A) A CALCULADORA!")
+    
+    print(Fore.YELLOW + "\nINICIANDO A CALCULADORA...\n")
+    #sleep(3)#Uma "brincadeira" para adicionar um tempinho fingindo que a calculadora está iniciando.
+
+    print(Fore.WHITE + "===" * 11)
+    print("SEJA BEM VINDO(A) A " + Fore.RED + Style.BRIGHT + "CALCULADORA!" + Style.RESET_ALL + Fore.WHITE)
     print("===" * 11)
 
-#faz o design da calculadora, imprimindo uma mensagem de boas-vindas e separando-a com linhas.
+#faz o design da calculadora, imprimindo uma mensagem de boas-vindas e separand em  linhas.
  
     print("Escolha a operação que deseja utilizar:\n")
-    print("1.Soma(+)\n")
-    print("2.Subtração(-)\n")
-    print("3.Multiplicação(*)\n")
-    print("4.Divisão(/)\n")
-    print("5.Potência(^)\n")
-    print("6.Sair(X)\n")
+    print(Fore.GREEN + Style.BRIGHT + "1.Soma(+)\n" + Style.RESET_ALL)
+    print(Fore.YELLOW + Style.BRIGHT + "2.Subtração(-)\n" + Style.RESET_ALL)
+    print(Fore.LIGHTCYAN_EX + Style.BRIGHT + "3.Multiplicação(*)\n" + Style.RESET_ALL)
+    print(Fore.MAGENTA +  Style.BRIGHT + "4.Divisão(/)\n" + Style.RESET_ALL)
+    print(Fore.BLUE + Style.BRIGHT + "5.Potência(**)\n" + Style.RESET_ALL)
+    print(Fore.RED + Style.BRIGHT + "6.Sair(X)\n" + Style.RESET_ALL)
 
-    oper = input("Digite a operação que você deseja utilizar: ")
+    oper = input(Fore.WHITE + "Digite a operação que você deseja utilizar:"+ Fore.RED + Style.BRIGHT + " ")
     if oper == "6":
-        print("Reiniciando...\n")
+        print(Fore.LIGHTMAGENTA_EX + "Reiniciando...\n")
         sleep(2)
-        continue #verifica se a operação escolhida é "6" (Sair). Se for, imprime uma mensagem de reinício, aguarda 2 segundos e reinicia o loop, voltando ao início do programa.
-        
+        continue #verifica se a operação escolhida é "6" (Sair). Se for, imprime uma mensagem de reinício, "conta" 2 segundos e reinicia o loop.
 
 #solicita ao usuário que escolha uma operação e, se a opção for "6", imprime uma mensagem de despedida e encerra o programa. Caso contrário, continua solicitando os números para realizar a operação escolhida.
 
-    num1 = float(input("Digite o primeiro número: "))
-    num2 = float(input("Digite o segundo número: "))
-    
-    print("Calculando...")
+    num1 = float(input(Fore.WHITE + "Digite o primeiro número:" + Fore.RED + Style.BRIGHT + " "))
+    num2 = float(input(Fore.WHITE + "Digite o segundo número:" + Fore.RED + Style.BRIGHT + " " ))
+
+    print(Fore.YELLOW + "\nCalculando...\n" + Fore.WHITE + "")
     sleep(2) #adiciona uma pausa de 1 segundo para simular o processo de cálculo, tornando a experiência do usuário mais realista.
 
-#verifica qual operação o usuário escolheu e realiza o cálculo correspondente, imprimindo o resultado. O loop continua até que o usuário escolha a opção de sair (6).
-
-    if oper == "1":
+#verifica qual operação o usuário escolheu e faz o cálculo de acordo com a operação escolhida. O loop continua até o usuário escolher a opção de sair (6).
+    if oper == "4" or oper == "/":
+        if num2 != 0:
+            print("O resultado da divisão é: " + Fore.MAGENTA + f"{num1 / num2}" + Fore.WHITE + "\n")
+        else:
+            print(Fore.RED + Style.BRIGHT + "[ERRO]" + Style.RESET_ALL + Fore.WHITE + " Não é possível dividir por zero.\n")
+#verifica se o usuário escolheu a operação de divisão. Caso o usuário tenha escolhido divisão com 0 com um dos números, o programa avisa com uma mensagem de erro. Caso use números diferntes de zero, o programa faz o cálculo normalmente.
+    if oper == "1" or oper == "+":
         resul = num1 + num2
-        print(f"O resultado da soma é: {resul}\n")
-    elif oper == "2":
-        print(f"O resultado da subtração é: {num1 - num2}\n")
-    elif oper == "3":
-        print(f"O resultado da multiplicação é: {num1 * num2}\n")
-    if oper == "4":
-        print(f"O resultado da divisão é: {num1 / num2}\n")
-    elif oper == "5":
-        print(f"O resultado da potência é: {num1 ** num2}\n")
+        print("O resultado da soma é: " + Fore.GREEN + f"{resul}" + Fore.WHITE + "\n")
+    
+    elif oper == "2" or oper == "-":
+        print("O resultado da subtração é: " + Fore.RED + f"{num1 - num2}" + Fore.WHITE + "\n")
+    
+    elif oper == "3" or oper == "*":
+        print("O resultado da multiplicação é: " + Fore.BLUE + f"{num1 * num2}" + Fore.WHITE + "\n")
+    
+    elif oper == "5" or oper == "**":
+        print("O resultado da potência é:" + Fore.CYAN + f"{num1 ** num2}" + Fore.WHITE + "\n")
